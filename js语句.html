@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js语句</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <!--JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么。-->
+    <p id="demo1">第一个段落</p>
+    <div id="div1">第一个块</div>
+    <script type="text/javascript">
+    	document.getElementById('demo1').innerHTML="JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么。";
+    	document.getElementById('div1').innerHTML="实现第一个块输出";
+    </script>
+    <!--以上实例以代码块实现:-->
+    <h1>以上实例以代码块实现:</h1>
+    <p id="demo2">第二个段落</p>
+    <div id="div2">第二个块</div>
+    <p>
+    <button type="button" onclick="myFunction1()">点击</button>
+    </p>
+    <script type="text/javascript">
+    	function myFunction1(){
+    	document.getElementById('demo2').innerHTML="实现第二个段落输出";
+    	document.getElementById("div2").innerHTML="实现第二个块输出";}
+    </script>
+</body>
+</html>

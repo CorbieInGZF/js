@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js语法</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <p id="demo1">js数字字面量</p>
+    <script type="text/javascript">
+    	document.getElementById("demo1").innerHTML=123e5;
+    </script>
+
+    <p id="demo2">js字符串字面量</p>
+    <script type="text/javascript">
+    	document.getElementById("demo2").innerHTML='字符字面量';//双引号也可以
+    </script>
+
+    <p id="demo3">表达式字面量</p>
+    <script type="text/javascript">
+    	document.getElementById("demo3").innerHTML=1+1;
+    </script>
+
+    <p id="demo4">js变量</p>
+    <script type="text/javascript">
+    	var x,lenght;
+    	x=5;
+    	lenght=6;
+    	document.getElementById("demo4").innerHTML=lenght;
+    </script>
+
+    <!--JS数据类型-->
+    <script type="text/javascript">
+    var length = 16;                                  // Number 通过数字字面量赋值 
+    var points = x * 10;                              // Number 通过表达式字面量赋值
+    var lastName = "Johnson";                         // String 通过字符串字面量赋值
+    var cars = ["Saab", "Volvo", "BMW"];              // Array  通过数组字面量赋值
+    var person = {firstName:"John", lastName:"Doe"};  // Object 通过对象字面量赋值
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js数据类型</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<pre>
+	字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
+	var carname=new String;
+    var x=      new Number;
+    var y=      new Boolean;
+    var cars=   new Array;
+    var person= new Object;
+</pre>
+<body>
+    <script type="text/javascript">
+    	var x='It\'s alright.';
+    	var y="He is called \"James\".";
+    	var z='He is called "James".';
+    	document.write(x+"<br>");
+    	document.write(y+"<br>");
+    	document.write(z+"<br>");
+    </script>
+
+    <p>js数组：</p>
+    <script type="text/javascript">
+    	//逐个声明
+    var i;
+    var cars = new Array();//声明空数组的方法还有：var arr = [ ];
+    cars[0] = "Saab0";
+    cars[1] = "Volvo0";
+    cars[2] = "BMW0";
+    for (i=0;i<cars.length;i++){
+    document.write(cars[i] + "<br>");
+    }
+    </script>
+    <script type="text/javascript">
+        //或者直接在数组里声明
+    	var carss = new Array("Saab1","Volvo1","BMW1");
+    	for (var j = carss.length - 1; j >= 0; j--) {
+    	document.write(carss[j] + "<br>");
+        }
+    </script>
+    <script type="text/javascript">
+    	//或者声明过程中定义为数组
+    	var carst=["Saab2","Volvo2","BMW2"];
+    	for (var q = carst.length - 1; q >= 0; q--) {
+    	document.write(carst[q]+"<br>");
+        }
+    </script>
+
+    <p>js对象：</p>
+    <script type="text/javascript">
+    	var person = {firstName:"James", 
+    	              lastName:"Hardon",
+    	              id:13};
+    	document.write(person.firstName + "<br>");
+    	document.write(person["lastName"] + "<br>");
+    </script>
+</body>
+</html>
