@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js函数</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<script type="text/javascript">
+		function myFunction(){
+			alert("Hello World!");
+		}
+	</script>
+	<button onclick="myFunction()">点击</button>
+    
+    <p>点击以调用带参数的函数</p>
+    <button onclick="myFunction2('James','player')">点击</button>
+    <script type="text/javascript">
+    	function myFunction2(name,job){
+    		document.write("Welcome "+name+",the "+job);
+    	}
+    </script>
+    <!--JavaScript 变量的生命期从它们被声明的时间开始。
+局部变量会在函数运行以后被删除。
+全局变量会在页面关闭后被删除。-->
+</body>
+</html>
