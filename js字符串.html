@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js字符串</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <p>通常， JavaScript 字符串是原始值，可以使用字符创建： var firstName = "John"
+但我们也可以使用 new 关键字将字符串定义为一个对象： var firstName = new String("John")</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script type="text/javascript">
+	var x = "john";//返回String
+	var y = new String("john");//返回Object
+	document.getElementById("demo1").innerHTML=typeof x +" "+ typeof y;
+	document.getElementById("demo2").innerHTML= x===y;
+</script>
+<p>===必须是绝对相等，数据类型和数值都要相等</p>
+</body>
+</html>
