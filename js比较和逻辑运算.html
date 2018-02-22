@@ -16,10 +16,77 @@
     <p id="demo"></p>
     <script type="text/javascript">
     	function myFunction1(){
-    		var age ,voteable;
+    		var age , voteable;
     		age=document.getElementById("age").value;
     		voteable=(age<18)?"年龄太小":"年龄已到达";
-    		document.getElementById("demo")
+    		document.getElementById("demo").innerHTML=voteable;
+    	}
+    </script>
+<hr>
+    <p>三目运算：</p>
+    数字：<input id="p" value="6">
+    <button onclick="myFunction2()">点击</button>
+    <p id="demo1"></p>
+    <script type="text/javascript">
+    	function myFunction2(){
+    	var a=5,b=7,p,v;
+        p=document.getElementById("p").value;
+    	v= p>1?p<b?p>b:p=6:p=3;
+    	document.getElementById("demo1").innerHTML=v;
+    }
+    </script>
+<hr>
+    <P>if else 语句：</P>
+    <p>显现在示时间段</p>
+    <script type="text/javascript">
+    	var d=new Date();
+    	var time=d.getHours();
+    	if (time<10){
+    		document.write("<b>早上好</b>");
+    	}
+    	else if (time>=10 && time<16) {
+    		document.write("<b>中午好</b>");
+    	}
+    	else{
+    		document.write("<b>晚上好</b>");
+    	}
+    </script>
+<hr>
+    <p>随机连接</p>
+    <p id="demo2"></p>
+    <script type="text/javascript">
+    	var r=Math.random();//0~1之间的数
+    	var x=document.getElementById("demo2");
+    	if (r>0.5){
+    		x.innerHTML="<a href='https://www.baidu.com/'>访问百度</a>";
+    	}
+    	else{
+    		x.innerHTML="<a href='https://www.zhihu.com/#signin'>访问知乎</a>";
+    	}
+    </script>
+<hr>
+    <p>switch语句：</p>
+    <p>显示今日日期消息</p>
+    <button onclick="myFunction3()">点击</button>
+    <p id="demo3"></p>
+    <script type="text/javascript">
+    	function myFunction3(){
+    		var x;
+    		var d=new Date().getDay();
+    		switch(d){
+    			case 6:x="今天是周六";
+    			case 0:x="今天是周日";
+    			break;
+    			default:x="期待周末";
+    		}
+    		document.getElementById("demo3").innerHTML=x;
+    	}
+    </script>
+<hr>
+    <script type="text/javascript">
+    	cars=["Bench","BMW","Volvo","Sadd"];
+    	for (var i = cars.length - 1; i >= 0; i--) {//次for循环得到的结果是倒叙输出的。。
+    		document.write(cars[i]+"<br>");
     	}
     </script>
 </body>
