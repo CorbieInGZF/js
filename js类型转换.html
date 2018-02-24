@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js类型转换</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <pre>js五种数据类型：string,number,boolean,object,function
+         3种对象类型：Object,Date,Array
+         2个不包含任何值的数据类型：null,undefined</pre>
+    <p id="demo1"></p>
+    <script>
+    document.getElementById("demo1").innerHTML = 
+    typeof "john" + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof NaN + "<br>" +
+    typeof false + "<br>" +
+    typeof [1,2,3,4] + "<br>" +
+    typeof {name:'john', age:34} + "<br>" +
+    typeof new Date() + "<br>" +
+    typeof function () {} + "<br>" +
+    typeof myCar + "<br>" +
+    typeof null;//null的数据类型是object
+    </script>
+<hr>
+    <p>constructor属性返回所有js变量的构造函数</p>
+    <p id="demo2"></p>
+    <script type="text/javascript">
+    	document.getElementById("demo2").innerHTML=
+    	"James".constructor+"<br>"+
+    	(3.14).constructor+"<br>"+
+    	false.constructor+"<br>"+
+    	[1,2,3,4].constructor+"<br>"+
+    	{name:"john",age:34}.constructor+"<br>"+
+    	new Date().constructor+"<br>"+
+    	function(){}.constructor;
+    </script>
+<hr>
+    <p>判断是否是数组：</p>
+    <p id="demo3"></p>
+    <script type="text/javascript">
+    	var fruits=["Banana","Orange","Apple","Mango"];
+    	document.getElementById("demo3").innerHTML=isArray(fruits);
+    	function isArray(myArray){
+    		return myArray.constructor.toString().indexOf("Array")>-1;
+    	}
+    </script>
+
+    <p>全局方法String可以将数字转换为字符串，Number方法效果相同</p>
+    <p id="demo4"></p>
+    <script type="text/javascript">
+    	var x=3;
+        document.getElementById("demo4").innerHTML=
+        String(x)+"<br>"+
+        String(123)+"<br>"+
+        (100+23).toString();
+    </script>
+
+    <p>全局方法Number()可以将字符串转化为数字</p>
+    <p id="demo5"></p>
+    <script type="text/javascript">
+    	var y="hello";
+    	document.getElementById("demo5").innerHTML=
+    	Number(y)+"<br>"+
+    	Number("3.14")+"<br>"+
+    	Number(" ")+"<br>"+
+    	Number("")+"<br>"+
+    	Number("99 88");
+    </script>
+<hr>
+    <p>+可以将变量转换为数字：</p>
+    <p id="demo6"></p>
+    <script type="text/javascript">
+    	var x="5";
+    	var y=+x;
+    	document.getElementById("demo6").innerHTML=y;
+    </script>
+
+    <p>将日期转换为数字：</p>
+    <p id="demo7"></p>
+    <script type="text/javascript">
+    	d=new Date();
+    	document.getElementById("demo7").innerHTML= Number(d);;
+    </script>
+<hr>
+    <p>instanceof操作符用来判断对象的具体格式：</p>
+    <p id="demo8"></p>
+    <script type="text/javascript">
+    	arr=[1,2,3];
+    	if(arr instanceof Array){
+    		document.write("arr是一个数组");
+    	}
+    	else{
+    		document.write("arr不是一个数组");
+    	}
+    </script>
+</body>
+</html>
