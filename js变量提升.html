@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js变量提升(hoisting)</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <p>js中，变量可以先使用后声明，也可以先声明后使用</p>
+    <p id="demo1"></p>
+    <script type="text/javascript">
+    	x=5;
+    	elem=document.getElementById("demo1");
+    	elem.innerHTML=x;
+    	var x;
+    </script>
+    <p id="demo2"></p>
+    <script type="text/javascript">
+    	var x=5;
+    	x=5;
+    	elem=document.getElementById("demo2").innerHTML=x;
+    </script>
+
+    <p>js只有声明的变量会提升，初始化不会</p>
+    <p id="demo3"></p>
+    <script type="text/javascript">
+    	var x=5;//初始化
+    	var y=7;
+    	elem=document.getElementById("demo3");
+    	elem.innerHTML=x+" "+y;
+    </script>
+    <p id="demo4"></p>
+    <script type="text/javascript">
+    	var p=5;
+    	elem=document.getElementById("demo4");
+    	elem.innerHTML="p为："+p+" q为："+q;
+    	var q=7;
+    </script>
+</body>
+</html>
