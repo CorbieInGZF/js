@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js严格模式</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<h1>"use strict" 指令只运行出现在脚本或函数的开头。</h1>
+    <h1>使用"use strict"：</h1>
+    <h3>1、不允许使用未定义变量</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	x=3;//报错（x未定义）
+    </script>
+<hr>
+    <p>函数内部是局部作用域（只在函数内使用严格模式)</p>
+    <script type="text/javascript">
+    	x=3;//不报错
+    	myFunction1(){
+    		function myFunction1(){
+    			"use strict";
+    			y=4;//报错（y未定义）
+    		}
+    	}
+    </script>
+
+    <h3>2、不允许删除变量或对象</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var a=3;
+    	delete a;
+    </script>
+
+    <h3>3、不允许删除函数</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	function x(p1,p2){};
+    	delete x;
+    </script>
+
+    <h3>4、不允许变量重名</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	function y(p3,p3){}
+    </script>
+
+    <h3>5、不允许使用八进制</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var x=010;
+    </script>
+
+    <h3>6、不允许使用转义字符</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var x=\010;
+    </script>
+
+    <h3>7、不允许对只读属性赋值</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var obj={};
+    	Object.defineProperty(obj,"x",{value:0;wirtable:false});
+    	obj.c=1;
+    </script>
+
+    <h3>8、不允许对一个使用getter方法读取的属性进行赋值</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var obj={get x(){return 0}};
+    	obj.x=3;
+    </script>
+
+    <h3>9、不允许删除一个不允许删除的属性</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	delete Object.prototype;
+    </script>
+
+    <h3>10、变量名不能使用"eval"字符串</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var eval=3;
+    </script>
+
+    <h3>11、变量名不能使用"arguments"字符串</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var arguments=3;
+    </script>
+
+    <h3>12、不允许使用以下这种语句</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	with(Math){x=cos(2)};
+    </script>
+
+    <h3>13、由于安全原因，在作用域eval()创建的变量不能被调用</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	eval ("var x=2");
+    	alert(x);
+    </script>
+
+    <h3>14、禁止this关键字指向全局对象</h3>
+    <script type="text/javascript">
+    	function f(){
+    		return !this;
+    	}//返回false，因为"this"指向全局对象，"!this"就是false
+    	function t(){
+    		return !this;
+    	}//返回true，因为严格模式下，this的值为undefined，所以"！this"为true
+    </script>
+    <p>因此，使用构造函数时，如果忘了加new，this不在指向全局对象，而是报错</p>
+    <script type="text/javascript">
+    	function y(){
+    		"use strict";
+    		this.a=1;
+    	}
+    	y();//报错，this未定义
+    </script>
+
+    <h3>15、严格模式不允许使用保留关键字</h3>
+    <script type="text/javascript">
+    	"use strict";
+    	var public=1500;
+    </script>
+</body>
+</html>
