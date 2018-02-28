@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js使用误区</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <h3>1、赋值运算符应用错误</h3>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script type="text/javascript">
+    	var x=0;
+    	document.getElementById("demo1").innerHTML=Boolean(x==10);
+    	var y=0;
+    	document.getElementById("demo2").innerHTML=Boolean(y=10);
+    	var z=0;
+    	document.getElementById("demo3").innerHTML=Boolean(z=0);
+    </script>
+
+    <h3>2、比较运算符常见错误</h3>
+    <p>在常规比较中==，数据类型是被忽略的</p>
+    <p id="demo4"></p>
+    <script type="text/javascript">
+    	var x=10;
+    	var y="10";
+    	document.getElementById("demo4").innerHTML=Boolean(x==y);
+    </script>
+    <p>===比较需考虑数据类型</p>
+    <p id="demo5"></p>
+    <script type="text/javascript">
+    	var x=10;
+    	var y="10";
+    	document.getElementById("demo5").innerHTML=Boolean(x===y);
+    </script>
+    <p>switch语句中会使用===进行比较：</p>
+    <script type="text/javascript">
+    	var x=10;
+    	switch(x){
+    		//类型不一致不会执行：
+    		case 10:alert("Hello!");
+    		// case "10":alert("Hello!");
+    	}
+    </script>
+
+    <h3>3、加法与连接注意事项</h3>
+    <script type="text/javascript">
+    	var x=10+5;
+    	document.write(x+"<br>");
+    	var x=10+"5";
+    	document.write(x);
+    </script>
+
+    <h3>4、浮点数数据使用注意事项</h3>
+    <p>js中所有数据都是以64位浮点数据来储存的</p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <script type="text/javascript">
+    	var x=0.1;
+    	var y=0.2;
+    	var z=x+y;
+    	document.getElementById("demo6").innerHTML=z;
+    	//以整数乘除法来解决
+    	var z=(x*10+y*10)/10;
+    	document.getElementById("demo7").innerHTML=z;
+    </script>
+
+    <h3>5、js字符串分行</h3>
+    <p>js允许在字符串中使用断行语句，但是在字符串中直接使用回车换行是会报错的,需要用\来断行</p>
+    <script type="text/javascript">
+    	var x=
+    	"Hello World!";
+    	var y="Hello\
+    	World!";
+    	document.write(x+"<br>");
+    	document.write(y);
+    </script>
+
+    <h3>6、错误的使用分号</h3>
+    <p id="demo8"></p>
+    <script type="text/javascript">
+    	var x=5;
+    	if(x==10);{//由于有了分号，if后的代码块一定会执行
+    		document.getElementById("demo8").innerHTML="Hello";
+    	}
+    </script>
+
+    <h3>7、Return语句使用注意事项</h3>
+    <p id="demo9"></p>
+    <script type="text/javascript">
+    	document.getElementById("demo9").innerHTML=myFunction1(55);
+    	function myFunction1(a){
+    		var p=10;
+    		return a*p//有与没有;结果一样，因为js代码是默认在最后一行自动结束
+    	}
+    </script>
+
+    <h3>8、数组中使用名字来索引</h3>
+    <p id="demo10"></p>
+    <script type="text/javascript">
+    	var person=[];
+    	person[0]="John";
+    	person[1]="Doe";
+    	person[2]=46;
+    	var x=person.length;
+    	var y=person[0];
+    	document.getElementById("demo10").innerHTML=y+" "+x;
+    </script>
+    <p>如果你使用名字作为索引，当访问数组时，JavaScript 会把数组重新定义为标准对象，数组的方法及属性将不能再使用，否则会产生错误:。</p>
+    <p id="demo11"></p>
+    <script type="text/javascript">
+    	var person=[];
+    	person["firstName"]="James";
+    	person["lastName"]="Hardon";
+    	person["age"]=46;
+    	document.getElementById("demo11").innerHTML=person[0]+" "+person.length;
+    </script>
+
+    <h3>9、定义数组元素，最后不能添加逗号</h3>
+    <script type="text/javascript">
+    	var colors=[5,6,7,];//长度可能为3或4
+    	document.write(colors.length);
+    </script>
+
+    <h3>10、定义对象，最后不能添加逗号</h3>
+    <script type="text/javascript">
+    	website={site:"xxx",url:"xxxxx",like:460,}//错误定义方式
+    </script>
+
+    <h3>11、Undefined不是Null</h3>
+    <p>在 JavaScript 中, null 用于对象, undefined 用于变量，属性和方法。对象只有被定义才有可能为 null，否则为 undefined。</p>
+    <script type="text/javascript">
+    	if(myObj !==null && typeof myObj !=="undefined")//错误
+    	if(typeof myObj !=="undefined" && myObj !== null )//正确
+    </script>
+
+    <h3>12、程序块作用域</h3>
+    <p>在每个代码块中 JavaScript 不会创建一个新的作用域，一般各个代码块的作用域都是全局的。</p>
+    <script type="text/javascript">
+    	for(var i=0;i<10;i++){}
+        document.write(i);
+    </script>
+</body>
+</html>
