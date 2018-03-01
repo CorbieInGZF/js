@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js：void(0)含义</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <p>void 是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值</p>
+    <a href="javascript:void(0)">单击此处什么也不会发生</a>
+    <br>
+    <a href="javascript:void(alert('Warning!!!'))">点我</a>
+    <br>
+    <script type="text/javascript">
+    	function getvalue(){
+    		var a,b,c;
+    		a=void(b=5,c=7);
+    		document.write('a= '+a+ 'b= '+ b+'c= '+c);
+    	}
+    </script>
+    <p>点击以下按钮查看结果：</p>
+    <form>
+    	<input type="button" value="点我" onclick="getvalue()" name="">
+    </form>
+
+    <a href="javascript:void(0);">点我没有反应</a>
+    <a href="#pos">点我定位到指定位置</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p id="pos">尾部定点位置</p>
+</body>
+</html>
